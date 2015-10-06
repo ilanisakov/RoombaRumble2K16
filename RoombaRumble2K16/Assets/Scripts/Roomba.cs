@@ -6,7 +6,15 @@ public class Roomba : MonoBehaviour {
     private int weaponID, health;
     private float radius;
 
-    public int playerID;
+    private int playerID;
+	public int PlayerID {
+		get {
+			return playerID;
+		}
+		set {
+			playerID = value;
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
