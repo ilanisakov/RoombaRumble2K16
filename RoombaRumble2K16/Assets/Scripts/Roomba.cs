@@ -15,6 +15,8 @@ public class Roomba : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (health <= 0) {
+			GetComponent<CharacterController>().enabled = false;
+		}
 	}
 }
