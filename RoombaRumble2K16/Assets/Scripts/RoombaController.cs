@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterController : MonoBehaviour {
+public class RoombaController : MonoBehaviour {
 
     private float speed;
     private float maxSpeed;
@@ -15,7 +15,7 @@ public class CharacterController : MonoBehaviour {
         maxSpeed = 5f;
         acceleration = .5f;
         friction = .9f;
-        playerID = this.GetComponent<Roomba>().playerID;
+        playerID = this.GetComponent<Roomba>().PlayerID;
 	}
 	
 	// Update is called once per frame
