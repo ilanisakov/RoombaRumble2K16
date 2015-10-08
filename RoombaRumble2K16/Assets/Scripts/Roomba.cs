@@ -37,4 +37,11 @@ public class Roomba : MonoBehaviour {
 			GetComponent<CharacterController>().enabled = false;
 		}
 	}
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        effectsHelper.Instance.Explosion(transform.position);
+
+    }
 }
