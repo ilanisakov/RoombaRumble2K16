@@ -3,7 +3,17 @@ using System.Collections;
 
 public class Roomba : MonoBehaviour {
 
-    private int weaponID, health;
+    private int weaponID;
+	private int health;
+	public int Health {
+		get {
+			return health;
+		}
+		set {
+			health = value;
+		}
+	}
+
     private float radius;
 
     private int playerID;
