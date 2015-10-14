@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RoombaController : MonoBehaviour {
+public class RoombaController : MonoBehaviour
+{
 
     private float speed;
     private float acceleration;
     private float friction;
 
     private float maxSpeed;
+    private float boostSpeed;
     private int playerID;
 
     GameObject meleeWeapon;
@@ -22,9 +24,11 @@ public class RoombaController : MonoBehaviour {
     public GameObject exhaustFlame;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         speed = 0f;
         maxSpeed = 5f;
+        boostSpeed = 13f;
         acceleration = .5f;
         friction = .9f;
         playerID = this.GetComponent<Roomba>().PlayerID;
@@ -38,15 +42,15 @@ public class RoombaController : MonoBehaviour {
         activeItem = (GameObject)Instantiate(activePrefab, transform.position, transform.rotation);
         activeItem.transform.parent = this.transform;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         // reset booster
         exhaustFlame.SetActive(false);
         maxSpeed = 5f;
 
-	    if((playerID == 1 && Input.GetKey(KeyCode.W)) || (playerID == 2 && Input.GetKey(KeyCode.UpArrow)))
+        if ((playerID == 1 && Input.GetKey(KeyCode.W)) || (playerID == 2 && Input.GetKey(KeyCode.UpArrow)))
         {
             speed += acceleration;
         }
@@ -62,7 +66,7 @@ public class RoombaController : MonoBehaviour {
         {
             transform.Rotate(Vector3.forward * -180 * Time.deltaTime);
         }
-        if((playerID == 1 && Input.GetKey(KeyCode.B)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad1)))
+        if ((playerID == 1 && Input.GetKey(KeyCode.B)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad1)))
         {
             meleeWeapon.GetComponent<Weapon>().Fire();
         }
@@ -76,7 +80,8 @@ public class RoombaController : MonoBehaviour {
         }
         if ((playerID == 1 && Input.GetKey(KeyCode.Space)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad0)))
         {
-            maxSpeed = 10f;
+            maxSpeed = boostSpeed;
+            speed += acceleration * 2;
             exhaustFlame.SetActive(true);
         }
 
@@ -85,6 +90,7 @@ public class RoombaController : MonoBehaviour {
             speed = maxSpeed;
         }
 
+        //Debug.Log(speed + ", " + maxSpeed);
         speed = speed * friction;
         transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
