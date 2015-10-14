@@ -38,10 +38,10 @@ public class Roomba : MonoBehaviour {
 		}
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
 
-        effectsHelper.Instance.Explosion(transform.position);
+    //    effectsHelper.Instance.Explosion(transform.position);
 
-    }
+    //}
 }
