@@ -4,16 +4,25 @@ using System.Collections;
 public class RoombaController : MonoBehaviour {
 
     private float speed;
-    private float maxSpeed;
     private float acceleration;
     private float friction;
+
+    private float maxSpeed;
     private int playerID;
 
     GameObject meleeWeapon;
     public GameObject meleePrefab;
 
-	// Use this for initialization
-	void Start () {
+    GameObject rangedWeapon;
+    public GameObject rangedPrefab;
+
+    GameObject activeItem;
+    public GameObject activePrefab;
+
+    public GameObject exhaustFlame;
+
+    // Use this for initialization
+    void Start () {
         speed = 0f;
         maxSpeed = 5f;
         acceleration = .5f;
@@ -22,10 +31,21 @@ public class RoombaController : MonoBehaviour {
 
         meleeWeapon = (GameObject)Instantiate(meleePrefab, transform.position, transform.rotation);
         meleeWeapon.transform.parent = this.transform;
-	}
+
+        rangedWeapon = (GameObject)Instantiate(rangedPrefab, transform.position, transform.rotation);
+        rangedWeapon.transform.parent = this.transform;
+
+        activeItem = (GameObject)Instantiate(activePrefab, transform.position, transform.rotation);
+        activeItem.transform.parent = this.transform;
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        // reset booster
+        exhaustFlame.SetActive(false);
+        maxSpeed = 5f;
+
 	    if((playerID == 1 && Input.GetKey(KeyCode.W)) || (playerID == 2 && Input.GetKey(KeyCode.UpArrow)))
         {
             speed += acceleration;
@@ -46,8 +66,21 @@ public class RoombaController : MonoBehaviour {
         {
             meleeWeapon.GetComponent<Weapon>().Fire();
         }
+        if ((playerID == 1 && Input.GetKey(KeyCode.N)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad2)))
+        {
+            rangedWeapon.GetComponent<Weapon>().Fire();
+        }
+        if ((playerID == 1 && Input.GetKey(KeyCode.M)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad3)))
+        {
+            activeItem.GetComponent<Weapon>().Fire();
+        }
+        if ((playerID == 1 && Input.GetKey(KeyCode.Space)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad0)))
+        {
+            maxSpeed = 10f;
+            exhaustFlame.SetActive(true);
+        }
 
-        if(speed > maxSpeed)
+        if (speed > maxSpeed)
         {
             speed = maxSpeed;
         }
