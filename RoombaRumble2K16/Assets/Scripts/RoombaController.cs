@@ -28,7 +28,7 @@ public class RoombaController : MonoBehaviour
     {
         speed = 0f;
         maxSpeed = 5f;
-        boostSpeed = 13f;
+        boostSpeed = 10f;
         acceleration = .5f;
         friction = .9f;
         playerID = this.GetComponent<Roomba>().PlayerID;
