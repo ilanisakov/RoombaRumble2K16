@@ -4,13 +4,14 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
     public GameObject roombaPrefab;
+    public GameObject roombaPrefab2;
     GameObject player1, player2;
     
 
     // Use this for initialization
     void Start () {
         GameObject player1 = (GameObject)Instantiate(roombaPrefab, new Vector2(-3,0), transform.rotation);
-        GameObject player2 = (GameObject)Instantiate(roombaPrefab, new Vector2(3, 0), transform.rotation);
+        GameObject player2 = (GameObject)Instantiate(roombaPrefab2, new Vector2(3, 0), transform.rotation);
 
 		player1.name = "Player 1";
 		player2.name = "Player 2";

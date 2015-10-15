@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64c2f596bb8d094fac9f1e0015e0e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buzzsaw1: {fileID: 192732}
+  buzzsaw1: {fileID: 176392}
   buzzsaw2: {fileID: 187052}
 --- !u!114 &11451088
 MonoBehaviour:
@@ -244,6 +244,10 @@ Prefab:
       propertyPath: weaponID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: buzzsaw1
+      value: 
+      objectReference: {fileID: 176392}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176392}
