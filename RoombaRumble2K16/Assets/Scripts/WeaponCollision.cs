@@ -15,7 +15,12 @@ public class WeaponCollision : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Banana");
-        // collision.gameObject.name
+		string n = collision.gameObject.name;
+		//Vector2 collVec = collision.gameObject.transform.position - this.gameObject.transform.position;
+		Vector2 collVec = -collision.contacts[0].normal;
+		if (n.Contains ("Player")) {
+			collision.gameObject.GetComponent<Roomba>().Health--;
+			//collision.gameObject.GetComponent<RoombaController>().KnockBack(collVec);
+		}
     }
 }

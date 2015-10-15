@@ -8,6 +8,9 @@ public class RoombaController : MonoBehaviour {
     private float acceleration;
     private float friction;
     private int playerID;
+	private Vector2 knockVec;
+	private bool knockingBack;
+	private int knockCounter = 0;
 
     GameObject meleeWeapon;
     public GameObject meleePrefab;
@@ -53,6 +56,20 @@ public class RoombaController : MonoBehaviour {
         }
 
         speed = speed * friction;
+		if (knockingBack){
+			transform.Translate(knockVec * maxSpeed * Time.deltaTime);
+			knockCounter++;
+			if (knockCounter >= 15){
+				knockingBack = false;
+				knockCounter = 0;
+			}
+		}
         transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
+
+	public void KnockBack(Vector2 otherVec){
+		knockVec = otherVec;
+		knockingBack = true;
+		//transform.Translate(otherVec * (maxSpeed * 0.25f));
+	}
 }
