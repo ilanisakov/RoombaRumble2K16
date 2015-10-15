@@ -34,13 +34,13 @@ public class WeaponCollision : MonoBehaviour {
 		if (weaponID == 1){
 			Vector2 collVec = -collision.contacts[0].normal;
 			if (n.Contains ("Player")) {
-				collision.gameObject.GetComponent<Roomba>().Health -= 5;
+				collision.gameObject.GetComponent<Roomba>().Health--;
 				collision.gameObject.GetComponent<RoombaController>().KnockBack(collVec);
 			}
 		}
 		if (weaponID == 2){
 			if (n.Contains("Player")){
-				collision.gameObject.GetComponent<Roomba>().Health--;
+				collision.gameObject.GetComponent<Roomba>().Health -= 5;
 			}
 			Destroy(this.gameObject);
 		}

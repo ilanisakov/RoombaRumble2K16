@@ -28,7 +28,7 @@ public class Roomba : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        health = 50;
+        health = 100;
 	}
 	
 	// Update is called once per frame
@@ -37,11 +37,4 @@ public class Roomba : MonoBehaviour {
 			GetComponent<RoombaController>().enabled = false;
 		}
 	}
-
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-
-    //    effectsHelper.Instance.Explosion(transform.position);
-
-    //}
 }

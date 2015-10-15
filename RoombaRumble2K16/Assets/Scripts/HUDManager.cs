@@ -29,11 +29,15 @@ public class HUDManager : MonoBehaviour {
 		if (player1.GetComponent<Roomba>().Health <= 0){
 			textFields[3].enabled = true;
 			textFields[3].text = "Player 2 Wins!";
+			player1.GetComponent<RoombaController>().enabled = false;
+			player2.GetComponent<RoombaController>().enabled = false;
 			textFields[0].enabled = false;
 		}
 		else if (player2.GetComponent<Roomba>().Health <= 0){
 			textFields[3].enabled = true;
 			textFields[3].text = "Player 1 Wins!";
+			player1.GetComponent<RoombaController>().enabled = false;
+			player2.GetComponent<RoombaController>().enabled = false;
 			textFields[0].enabled = false;
 		}
 		else if (timer <= 0){
