@@ -21,4 +21,6 @@ public class Buzzsaw : Weapon {
         buzzsaw1.transform.Rotate(Vector3.forward * 720 * Time.deltaTime);
         buzzsaw2.transform.Rotate(Vector3.forward * -720 * Time.deltaTime);
     }
+
+
 }

@@ -1,35 +1,61 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RoombaController : MonoBehaviour {
+public class RoombaController : MonoBehaviour
+{
 
     private float speed;
-    private float maxSpeed;
     private float acceleration;
     private float friction;
+
+    private float maxSpeed;
+    private float boostSpeed;
     private int playerID;
 	private Vector2 knockVec;
 	private bool knockingBack;
 	private int knockCounter = 0;
 
+	private bool beingHit = false;
+
     GameObject meleeWeapon;
     public GameObject meleePrefab;
 
-	// Use this for initialization
-	void Start () {
+    GameObject rangedWeapon;
+    public GameObject rangedPrefab;
+
+    GameObject activeItem;
+    public GameObject activePrefab;
+
+    public GameObject exhaustFlame;
+
+    // Use this for initialization
+    void Start()
+    {
         speed = 0f;
         maxSpeed = 5f;
+        boostSpeed = 10f;
         acceleration = .5f;
         friction = .9f;
         playerID = this.GetComponent<Roomba>().PlayerID;
 
         meleeWeapon = (GameObject)Instantiate(meleePrefab, transform.position, transform.rotation);
         meleeWeapon.transform.parent = this.transform;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	    if((playerID == 1 && Input.GetKey(KeyCode.W)) || (playerID == 2 && Input.GetKey(KeyCode.UpArrow)))
+
+        rangedWeapon = (GameObject)Instantiate(rangedPrefab, transform.position, transform.rotation);
+        rangedWeapon.transform.parent = this.transform;
+
+        activeItem = (GameObject)Instantiate(activePrefab, transform.position, transform.rotation);
+        activeItem.transform.parent = this.transform;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // reset booster
+        exhaustFlame.SetActive(false);
+        maxSpeed = 5f;
+
+        if ((playerID == 1 && Input.GetKey(KeyCode.W)) || (playerID == 2 && Input.GetKey(KeyCode.UpArrow)))
         {
             speed += acceleration;
         }
@@ -45,16 +71,31 @@ public class RoombaController : MonoBehaviour {
         {
             transform.Rotate(Vector3.forward * -180 * Time.deltaTime);
         }
-        if((playerID == 1 && Input.GetKey(KeyCode.B)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad1)))
+        if ((playerID == 1 && Input.GetKey(KeyCode.B)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad1)))
         {
             meleeWeapon.GetComponent<Weapon>().Fire();
         }
+        if ((playerID == 1 && Input.GetKey(KeyCode.N)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad2)))
+        {
+            rangedWeapon.GetComponent<Weapon>().Fire();
+        }
+        if ((playerID == 1 && Input.GetKey(KeyCode.M)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad3)))
+        {
+            activeItem.GetComponent<Weapon>().Fire();
+        }
+        if ((playerID == 1 && Input.GetKey(KeyCode.Space)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad0)))
+        {
+            maxSpeed = boostSpeed;
+            speed += acceleration * 2;
+            exhaustFlame.SetActive(true);
+        }
 
-        if(speed > maxSpeed)
+        if (speed > maxSpeed)
         {
             speed = maxSpeed;
         }
 
+        //Debug.Log(speed + ", " + maxSpeed);
         speed = speed * friction;
 		if (knockingBack){
 			transform.Translate(knockVec * maxSpeed * Time.deltaTime);
@@ -68,8 +109,10 @@ public class RoombaController : MonoBehaviour {
     }
 
 	public void KnockBack(Vector2 otherVec){
-		knockVec = otherVec;
-		knockingBack = true;
+		if (!beingHit){
+			knockVec = otherVec;
+			knockingBack = true;
+		}
 		//transform.Translate(otherVec * (maxSpeed * 0.25f));
 	}
 }

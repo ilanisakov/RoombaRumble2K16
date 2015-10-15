@@ -38,18 +38,22 @@ public class effectsHelper : MonoBehaviour
     /// <returns></returns>
     private ParticleSystem instantiate(ParticleSystem prefab, Vector3 position)
     {
+        position.z += 1;
+
         ParticleSystem newParticleSystem = Instantiate(
           prefab,
           position,
           Quaternion.identity
         ) as ParticleSystem;
 
+        
         // Make sure it will be destroyed
         Destroy(
           newParticleSystem.gameObject,
           newParticleSystem.startLifetime
         );
 
+        
         return newParticleSystem;
     }
 }
