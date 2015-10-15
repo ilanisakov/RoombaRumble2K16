@@ -15,8 +15,6 @@ public class RoombaController : MonoBehaviour
 	private bool knockingBack;
 	private int knockCounter = 0;
 
-	private bool beingHit = false;
-
     GameObject meleeWeapon;
     public GameObject meleePrefab;
 
@@ -109,10 +107,8 @@ public class RoombaController : MonoBehaviour
     }
 
 	public void KnockBack(Vector2 otherVec){
-		if (!beingHit){
-			knockVec = otherVec;
-			knockingBack = true;
-		}
+		knockVec = otherVec;
+		knockingBack = true;
 		//transform.Translate(otherVec * (maxSpeed * 0.25f));
 	}
 }

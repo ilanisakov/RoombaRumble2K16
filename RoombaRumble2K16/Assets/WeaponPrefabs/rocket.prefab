@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21291880}
   - 114: {fileID: 11458056}
   - 114: {fileID: 11484582}
+  - 61: {fileID: 6195608}
   m_Layer: 0
   m_Name: rocket
   m_TagString: Untagged
@@ -30,6 +31,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6195608
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161608}
+  m_Enabled: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 7.91000032, y: 30.0000019}
 --- !u!114 &11458056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radiusX: 0
   radiusY: 0
+  weaponID: 2
 --- !u!212 &21291880
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -98,6 +113,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: .0299999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: weaponID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

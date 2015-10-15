@@ -28,13 +28,13 @@ public class Roomba : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        health = 10;
+        health = 50;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (health <= 0) {
-			//GetComponent<RoombaController>().enabled = false;
+			GetComponent<RoombaController>().enabled = false;
 		}
 	}
 

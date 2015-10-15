@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 442446}
   - 212: {fileID: 21223272}
   - 114: {fileID: 11472446}
+  - 58: {fileID: 5836940}
   m_Layer: 0
   m_Name: mine
   m_TagString: Untagged
@@ -29,6 +30,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!58 &5836940
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194986}
+  m_Enabled: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.79999995
 --- !u!114 &11472446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -42,6 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radiusX: 0
   radiusY: 0
+  weaponID: 3
 --- !u!212 &21223272
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -86,6 +101,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: weaponID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 1.79999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
