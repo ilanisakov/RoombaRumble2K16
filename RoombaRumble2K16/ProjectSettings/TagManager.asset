@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: roomba
+    uniqueID: 1853484041
+    locked: 0
+  - name: top weapons
+    uniqueID: 799180129
+    locked: 0

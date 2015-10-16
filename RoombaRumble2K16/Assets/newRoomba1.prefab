@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleePrefab: {fileID: 176392, guid: 0e1cbc6b7ade40848849ec04c1e5e64c, type: 2}
-  rangedPrefab: {fileID: 106488, guid: afed71ae0ae30884788d7e5fafda6192, type: 2}
+  rangedPrefab: {fileID: 177186, guid: ba17e0f68ea45f04d931391c33b2e018, type: 2}
   activePrefab: {fileID: 110550, guid: 59581ab45ea25a349ac810022ac86612, type: 2}
   exhaustFlame: {fileID: 173568, guid: fcd30092f8334bb4c9fa0cf18d8eb803, type: 2}
 --- !u!114 &11486978
@@ -347,7 +347,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: rangedPrefab
       value: 
-      objectReference: {fileID: 106488, guid: afed71ae0ae30884788d7e5fafda6192, type: 2}
+      objectReference: {fileID: 177186, guid: ba17e0f68ea45f04d931391c33b2e018, type: 2}
     - target: {fileID: 0}
       propertyPath: activePrefab
       value: 
