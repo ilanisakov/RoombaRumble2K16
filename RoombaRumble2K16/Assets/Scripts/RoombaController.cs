@@ -24,8 +24,6 @@ public class RoombaController : MonoBehaviour
     GameObject activeItem;
     public GameObject activePrefab;
 
-    public GameObject exhaustFlame;
-
     // Use this for initialization
     void Start()
     {
@@ -50,7 +48,6 @@ public class RoombaController : MonoBehaviour
     void Update()
     {
         // reset booster
-        exhaustFlame.SetActive(false);
         maxSpeed = 5f;
 
         if ((playerID == 1 && Input.GetKey(KeyCode.W)) || (playerID == 2 && Input.GetKey(KeyCode.UpArrow)))
@@ -85,7 +82,7 @@ public class RoombaController : MonoBehaviour
         {
             maxSpeed = boostSpeed;
             speed += acceleration * 2;
-            exhaustFlame.SetActive(true);
+            effectsHelper.Instance.Boost(transform.position, transform.localRotation);
         }
 
         if (speed > maxSpeed)
