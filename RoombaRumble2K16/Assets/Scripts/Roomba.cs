@@ -37,4 +37,18 @@ public class Roomba : MonoBehaviour {
 			GetComponent<RoombaController>().enabled = false;
 		}
 	}
+    public void Stun()
+    {
+        StartCoroutine(Stunned());
+    }
+    private IEnumerator Stunned()
+    {
+        this.GetComponent<RoombaController>().enabled = false;
+        Debug.Log("Stunned");
+
+        yield return new WaitForSeconds(1.50f);
+
+        Debug.Log("unStunned");
+        this.GetComponent<RoombaController>().enabled = true;
+    }
 }
