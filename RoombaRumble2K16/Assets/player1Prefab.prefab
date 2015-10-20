@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleePrefab: {fileID: 176392, guid: 0e1cbc6b7ade40848849ec04c1e5e64c, type: 2}
   rangedPrefab: {fileID: 104838, guid: a63b9118988eda24cb2f1ec03ebe52e8, type: 2}
-  activePrefab: {fileID: 118326, guid: 9f7942ba4b361274fabb1ab147033497, type: 2}
+  activePrefab: {fileID: 110550, guid: 59581ab45ea25a349ac810022ac86612, type: 2}
 --- !u!212 &21226516
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -182,7 +182,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: activePrefab
       value: 
-      objectReference: {fileID: 118326, guid: 9f7942ba4b361274fabb1ab147033497, type: 2}
+      objectReference: {fileID: 110550, guid: 59581ab45ea25a349ac810022ac86612, type: 2}
     - target: {fileID: 0}
       propertyPath: rangedPrefab
       value: 

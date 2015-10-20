@@ -30,7 +30,7 @@ public class Mine_Layer : Weapon {
 		timer += Time.deltaTime;
     }
 
-    public override void Fire()
+    public override void Fire(GameObject activator)
     {
 		if (canFire){
 			if (alternateFire){
