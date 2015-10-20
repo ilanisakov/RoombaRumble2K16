@@ -23,7 +23,6 @@ public class WeaponCollision : MonoBehaviour {
 		if (weaponID == 3 && counter >= 30){
 			this.gameObject.GetComponent<CircleCollider2D>().enabled = true;
 		}
-
 		counter++;
 	}
 
@@ -42,6 +41,7 @@ public class WeaponCollision : MonoBehaviour {
 			if (n.Contains("Player")){
 				collision.gameObject.GetComponent<Roomba>().Health -= 5;
 			}
+			Debug.Log(n);
 			Destroy(this.gameObject);
 		}
 		if (weaponID == 3){

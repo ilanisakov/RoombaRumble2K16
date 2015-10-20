@@ -7,6 +7,8 @@ public class Drop_the_Bass : Weapon {
     public GameObject bassPrefab;
     public GameObject water;
 
+	private GameObject dropper;
+
     private GameObject droppedBass;
     private GameObject stunArea;
     private bool droppingTheBass;
@@ -16,6 +18,9 @@ public class Drop_the_Bass : Weapon {
     private Vector3 bassPos;
     private Quaternion bassRot;
 
+	private float timer;
+	private bool canFire;
+
 	// Use this for initialization
 	void Start () {
         Hide();
@@ -24,8 +29,8 @@ public class Drop_the_Bass : Weapon {
         dropping = false;
         bassRot = Quaternion.identity;
         waterScale = 7.75f;
-        //Debug.Log(this.gameObject);
-        //Destroy(theBass, 5.0f);
+		canFire = true;
+		timer = 0;
 	}
 	
 	// Update is called once per frame
@@ -42,6 +47,7 @@ public class Drop_the_Bass : Weapon {
                     dropping = false;
                     bassPos = this.transform.position;
                     droppedBass = (GameObject)Instantiate(bassPrefab, bassPos, bassRot);
+					droppedBass.GetComponent<DroppedBassCollider>().Dropper = dropper;
                     stunArea = (GameObject)Instantiate(water, bassPos, bassRot);
                     stunArea.transform.localScale = new Vector3(waterScale, waterScale, waterScale);
                     Hide();
@@ -54,15 +60,23 @@ public class Drop_the_Bass : Weapon {
                // Stun();
             }
         }
+		if (timer >= 3){
+			canFire = true;
+		}
+		timer += Time.deltaTime;
 	}
 
-    public override void Fire()
+    public override void Fire(GameObject activator)
     {
-        droppingTheBass = true;
-        dropping = true;
-        theBass.transform.localScale = new Vector3(scale, scale, scale);
-        theBass.GetComponent<SpriteRenderer>().enabled = true;
-       
+		if (canFire){
+  	      	droppingTheBass = true;
+  	      	dropping = true;
+  	      	theBass.transform.localScale = new Vector3(scale, scale, scale);
+  	      	theBass.GetComponent<SpriteRenderer>().enabled = true;
+			dropper = activator;
+			canFire = false;
+			timer = 0;
+		}
     }
 
     private void Hide()

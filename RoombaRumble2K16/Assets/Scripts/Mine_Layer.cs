@@ -32,10 +32,6 @@ public class Mine_Layer : Weapon {
 
     public override void Fire()
     {
-        //if (canFire)
-       // {
-        //    StartCoroutine(Launch());
-        //}
 		if (canFire){
 			if (alternateFire){
 				Instantiate(mine, mine_layer2.transform.position, mine_layer2.transform.rotation);
@@ -48,24 +44,4 @@ public class Mine_Layer : Weapon {
 			timer = 0;
 		}
     }
-
-    // method to fire rockets
-    //IEnumerator Launch()
-    //{
-    //    if (canFire){
-    //    	if (alternateFire)
-    //    	{
-    //    	    Instantiate(mine, mine_layer2.transform.position, mine_layer2.transform.rotation);
-    //    	}
-     //   	else
-     //   	{
-    //    	    Instantiate(mine, mine_layer1.transform.position, mine_layer1.transform.rotation);
-     //   	}
-    //    	alternateFire = !alternateFire;
-	//		canFire = false;
-	//		timer = 0;
-	//	}
-        //yield return new WaitForSeconds(.3f);
-        
-    //}
 }

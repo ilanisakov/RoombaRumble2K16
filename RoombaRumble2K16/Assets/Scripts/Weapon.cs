@@ -17,4 +17,9 @@ public class Weapon : MonoBehaviour {
     {
 
     }
+
+	public virtual void Fire (GameObject activator)
+	{
+		
+	}
 }

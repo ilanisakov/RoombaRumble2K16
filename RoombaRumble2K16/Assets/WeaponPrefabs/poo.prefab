@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21206724}
   - 114: {fileID: 11473992}
   - 114: {fileID: 11459576}
-  - 61: {fileID: 6162094}
+  - 61: {fileID: 6161284}
   m_Layer: 0
   m_Name: poo
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6162094
+--- !u!61 &6161284
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -43,14 +43,14 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 7.91000032, y: 30.0000019}
+  m_Size: {x: .5, y: .479999989}
 --- !u!114 &11459576
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174042}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbd33453c88d90d46a4256434e8d7f79, type: 3}
   m_Name: 

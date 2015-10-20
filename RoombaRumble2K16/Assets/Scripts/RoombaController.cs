@@ -76,7 +76,7 @@ public class RoombaController : MonoBehaviour
         }
         if ((playerID == 1 && Input.GetKey(KeyCode.M)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad3)))
         {
-            activeItem.GetComponent<Weapon>().Fire();
+			activeItem.GetComponent<Weapon>().Fire(this.gameObject);
         }
         if ((playerID == 1 && Input.GetKey(KeyCode.Space)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad0)))
         {
