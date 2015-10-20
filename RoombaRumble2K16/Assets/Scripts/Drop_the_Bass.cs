@@ -23,8 +23,8 @@ public class Drop_the_Bass : Weapon {
         droppingTheBass = false;
         dropping = false;
         bassRot = Quaternion.identity;
-        waterScale = 8.0f;
-        
+        waterScale = 7.75f;
+        //Debug.Log(this.gameObject);
         //Destroy(theBass, 5.0f);
 	}
 	

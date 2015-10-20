@@ -16,7 +16,7 @@ public class Roomba : MonoBehaviour {
 
     private float radius;
 
-    private int playerID;
+    public int playerID;
 	public int PlayerID {
 		get {
 			return playerID;

@@ -60,6 +60,6 @@ public class WeaponCollision : MonoBehaviour {
             radiusY *= -1;
         }
         //make the sparks happen on the outside of the weapon
-        effectsHelper.Instance.Explosion(transform.position);
+        effectsHelper.Instance.Explosion(transform.position, Quaternion.identity);
     }
 }

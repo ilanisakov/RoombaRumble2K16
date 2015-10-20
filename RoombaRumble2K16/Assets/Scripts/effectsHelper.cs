@@ -9,6 +9,7 @@ public class effectsHelper : MonoBehaviour
     public static effectsHelper Instance;
 
     public ParticleSystem fireEffect;
+    public ParticleSystem boostEffect;
 
     void Awake()
     {
@@ -25,10 +26,15 @@ public class effectsHelper : MonoBehaviour
     /// Create an explosion at the given location
     /// </summary>
     /// <param name="position"></param>
-    public void Explosion(Vector3 position)
+    public void Explosion(Vector3 position, Quaternion rotation)
     {
        
-        instantiate(fireEffect, position);
+        instantiate(fireEffect, position, rotation);
+    }
+
+    public void Boost(Vector3 position, Quaternion rotation)
+    {
+        instantiate(boostEffect, position,rotation);
     }
 
     /// <summary>
@@ -36,14 +42,14 @@ public class effectsHelper : MonoBehaviour
     /// </summary>
     /// <param name="prefab"></param>
     /// <returns></returns>
-    private ParticleSystem instantiate(ParticleSystem prefab, Vector3 position)
+    private ParticleSystem instantiate(ParticleSystem prefab, Vector3 position, Quaternion rotation)
     {
         position.z += 1;
 
         ParticleSystem newParticleSystem = Instantiate(
           prefab,
           position,
-          Quaternion.identity
+          rotation
         ) as ParticleSystem;
 
         

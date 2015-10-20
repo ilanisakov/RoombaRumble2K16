@@ -14,7 +14,7 @@ public class DroppedBassCollider : MonoBehaviour {
 	}
     void OnTriggerEnter2D(Collider2D col)
     {
-       // Debug.Log(col.gameObject);
+       //Debug.Log(this.gameObject);
         if (col.gameObject.name == "Player 2")
         {
             col.gameObject.GetComponent<Roomba>().Stun();
