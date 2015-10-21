@@ -57,7 +57,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radiusX: 0
   radiusY: 0
-  weaponID: 2
+  weaponID: 4
 --- !u!114 &11473992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,7 +104,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: weaponID
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled

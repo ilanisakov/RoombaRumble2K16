@@ -27,7 +27,7 @@ public class Monkey_Gun : Weapon {
     {
         canFire = false;
         Instantiate(projectile, monkeyGun.transform.position, monkeyGun.transform.rotation);
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.3f);
         canFire = true;
     }
 }

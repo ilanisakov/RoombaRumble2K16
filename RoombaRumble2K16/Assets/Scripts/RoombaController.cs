@@ -13,6 +13,7 @@ public class RoombaController : MonoBehaviour
     private int playerID;
 	private Vector2 knockVec;
 	private bool knockingBack;
+	private bool slowed;
 	private int knockCounter = 0;
 
     GameObject meleeWeapon;
@@ -89,6 +90,9 @@ public class RoombaController : MonoBehaviour
         {
             speed = maxSpeed;
         }
+		if (slowed) {
+			speed = speed * 0.7f;
+		}
 
         //Debug.Log(speed + ", " + maxSpeed);
         speed = speed * friction;
@@ -107,5 +111,11 @@ public class RoombaController : MonoBehaviour
 		knockVec = otherVec;
 		knockingBack = true;
 		//transform.Translate(otherVec * (maxSpeed * 0.25f));
+	}
+
+	public bool Slow
+	{
+		get { return slowed;}
+		set { slowed = value;}
 	}
 }

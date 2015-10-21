@@ -17,7 +17,7 @@ public class WeaponCollision : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (weaponID == 2 && counter >= 5){
+		if ((weaponID == 2 || weaponID == 4) && counter >= 5){
 			this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
 		}
 		if (weaponID == 3 && counter >= 30){
@@ -30,23 +30,30 @@ public class WeaponCollision : MonoBehaviour {
     {
 		string n = collision.gameObject.name;
 		//Vector2 collVec = collision.gameObject.transform.position - this.gameObject.transform.position;
-		if (weaponID == 1){
+		if (weaponID == 1){//buzzsaw
 			Vector2 collVec = -collision.contacts[0].normal;
 			if (n.Contains ("Player")) {
 				collision.gameObject.GetComponent<Roomba>().Health--;
 				collision.gameObject.GetComponent<RoombaController>().KnockBack(collVec);
 			}
 		}
-		if (weaponID == 2){
+		if (weaponID == 2){//rocket
 			if (n.Contains("Player")){
 				collision.gameObject.GetComponent<Roomba>().Health -= 5;
 			}
 			Debug.Log(n);
 			Destroy(this.gameObject);
 		}
-		if (weaponID == 3){
+		if (weaponID == 3){//mines
 			if (n.Contains("Player")){
 				collision.gameObject.GetComponent<Roomba>().Health -= 10;
+			}
+			Destroy(this.gameObject);
+		}
+		if (weaponID == 4) {
+			if (n.Contains("Player")){
+				collision.gameObject.GetComponent<Roomba>().Health -= 3;
+				collision.gameObject.GetComponent<Roomba>().Slow();
 			}
 			Destroy(this.gameObject);
 		}
