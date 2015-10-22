@@ -17,7 +17,7 @@ public class WeaponCollision : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if ((weaponID == 2 || weaponID == 4) && counter >= 5){
+		if ((weaponID == 2 || weaponID == 4) && counter >= 7){
 			this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
 		}
 		if (weaponID == 3 && counter >= 30){

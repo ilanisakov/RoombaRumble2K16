@@ -83,7 +83,7 @@ public class RoombaController : MonoBehaviour
         {
             maxSpeed = boostSpeed;
             speed += acceleration * 2;
-            effectsHelper.Instance.Boost(transform.position, transform.localRotation);
+            effectsHelper.Instance.Boost(transform.position, transform.rotation);
         }
 
         if (speed > maxSpeed)
