@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theBass: {fileID: 118326}
   bassPrefab: {fileID: 165194, guid: 9aa39248331e6db47ad57c067c11477c, type: 2}
-  water: {fileID: 166854, guid: 0cf0027b1071e4343ae78a6a6d3465a8, type: 2}
+  water: {fileID: 153736, guid: b1e917d02af47a14f8bbdf633153b624, type: 2}
 --- !u!212 &21286680
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -105,7 +105,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: water
       value: 
-      objectReference: {fileID: 166854, guid: 0cf0027b1071e4343ae78a6a6d3465a8, type: 2}
+      objectReference: {fileID: 153736, guid: b1e917d02af47a14f8bbdf633153b624, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118326}
