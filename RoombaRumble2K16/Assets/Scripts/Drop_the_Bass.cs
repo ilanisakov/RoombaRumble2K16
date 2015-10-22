@@ -28,7 +28,7 @@ public class Drop_the_Bass : Weapon {
         droppingTheBass = false;
         dropping = false;
         bassRot = Quaternion.identity;
-        waterScale = .4f;
+        waterScale = 0.9f;
 		canFire = true;
 		timer = 0;
 	}

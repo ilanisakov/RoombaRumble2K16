@@ -52,7 +52,7 @@ public class WeaponCollision : MonoBehaviour {
 		}
 		if (weaponID == 4) {
 			if (n.Contains("Player")){
-				collision.gameObject.GetComponent<Roomba>().Health -= 3;
+				collision.gameObject.GetComponent<Roomba>().Health -= 1;
 				collision.gameObject.GetComponent<Roomba>().Slow();
 			}
 			Destroy(this.gameObject);
