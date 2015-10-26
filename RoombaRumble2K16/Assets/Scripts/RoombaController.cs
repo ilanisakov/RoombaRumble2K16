@@ -71,10 +71,6 @@ public class RoombaController : MonoBehaviour
         {
             meleeWeapon.GetComponent<Weapon>().Fire();
         }
-        if ((playerID == 1 && Input.GetKey(KeyCode.N)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad2)))
-        {
-            rangedWeapon.GetComponent<Weapon>().Fire();
-        }
         if ((playerID == 1 && Input.GetKey(KeyCode.M)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad3)))
         {
 			activeItem.GetComponent<Weapon>().Fire(this.gameObject);
@@ -84,6 +80,10 @@ public class RoombaController : MonoBehaviour
             maxSpeed = boostSpeed;
             speed += acceleration * 2;
             effectsHelper.Instance.Boost(transform.position, transform.rotation);
+        }
+        else if ((playerID == 1 && Input.GetKey(KeyCode.N)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad2)))
+        {
+            rangedWeapon.GetComponent<Weapon>().Fire();
         }
 
         if (speed > maxSpeed)
