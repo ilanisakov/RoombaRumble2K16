@@ -118,4 +118,19 @@ public class RoombaController : MonoBehaviour
 		get { return slowed;}
 		set { slowed = value;}
 	}
+
+	public GameObject MeleePrefab {
+		get { return meleePrefab;}
+		set { meleePrefab = value;}
+	}
+
+	public GameObject RangedPrefab {
+		get { return rangedPrefab;}
+		set { rangedPrefab = value;}
+	}
+
+	public GameObject ActivePrefab {
+		get { return activePrefab;}
+		set { activePrefab = value;}
+	}
 }
