@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675bfc9a4782c2d44aac5fe4fb899e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roombaPrefab: {fileID: 158796, guid: 45c0967b555699e41916edb70d6ba9b8, type: 2}
+  roombaPrefab: {fileID: 174420, guid: 45c0967b555699e41916edb70d6ba9b8, type: 2}
   roombaPrefab2: {fileID: 104876, guid: 2a8cde7b1b02e834888e7a8d96e4da42, type: 2}
 --- !u!4 &164307579
 Transform:
