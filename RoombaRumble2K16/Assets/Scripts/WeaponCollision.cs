@@ -32,9 +32,9 @@ public class WeaponCollision : MonoBehaviour {
 		//Vector2 collVec = collision.gameObject.transform.position - this.gameObject.transform.position;
 		if (weaponID == 1){//buzzsaw
 			Vector2 collVec = -collision.contacts[0].normal;
-			if (n.Contains ("Player")) {
+			if (n.Contains ("Player") && collision.gameObject.tag != "Weapon") {
 				collision.gameObject.GetComponent<Roomba>().Health--;
-				collision.gameObject.GetComponent<RoombaController>().KnockBack(collVec);
+				// collision.gameObject.GetComponent<RoombaController>().KnockBack(collVec);
 			}
 		}
 		if (weaponID == 2){//rocket
