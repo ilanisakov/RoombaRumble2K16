@@ -71,7 +71,6 @@ public class WeaponCollision : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-
         if (transform.position.x < 0)
         {
             radiusX *= -1;

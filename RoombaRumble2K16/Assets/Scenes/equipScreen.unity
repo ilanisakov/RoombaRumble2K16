@@ -975,7 +975,7 @@ MonoBehaviour:
     m_Options:
     - m_Text: Buzzsaw
       m_Image: {fileID: 0}
-    - m_Text: Other
+    - m_Text: Lightsaber
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   meleeDrop: {fileID: 623243501}
   roomba: {fileID: 11431570, guid: 45c0967b555699e41916edb70d6ba9b8, type: 2}
   prefZero: {fileID: 176392, guid: 0e1cbc6b7ade40848849ec04c1e5e64c, type: 2}
-  prefOne: {fileID: 0}
+  prefOne: {fileID: 119238, guid: eb462b386a92285459ad8c15608813ab, type: 2}
 --- !u!1 &648747174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,7 +2693,7 @@ MonoBehaviour:
   meleeDrop: {fileID: 1147915356}
   roomba: {fileID: 11451162, guid: 2a8cde7b1b02e834888e7a8d96e4da42, type: 2}
   prefZero: {fileID: 176392, guid: 0e1cbc6b7ade40848849ec04c1e5e64c, type: 2}
-  prefOne: {fileID: 0}
+  prefOne: {fileID: 119238, guid: eb462b386a92285459ad8c15608813ab, type: 2}
 --- !u!114 &1147915356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2740,7 +2740,7 @@ MonoBehaviour:
     m_Options:
     - m_Text: Buzzsaw
       m_Image: {fileID: 0}
-    - m_Text: Other
+    - m_Text: Lightsaber
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
