@@ -36,5 +36,6 @@ public class Flamethrower : Weapon {
     {
         Debug.Log("STOP");
         flame.enableEmission = false;
+        firing = false;
     }
 }

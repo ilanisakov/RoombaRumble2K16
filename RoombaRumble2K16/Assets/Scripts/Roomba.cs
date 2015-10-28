@@ -28,7 +28,7 @@ public class Roomba : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        health = 100;
+        health = 1000;
 	}
 	
 	// Update is called once per frame

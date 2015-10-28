@@ -8,6 +8,7 @@ public class meleeDropDown : MonoBehaviour {
 	public RoombaController roomba;
 	public GameObject prefZero;
 	public GameObject prefOne;
+    public GameObject prefTwo;
 	
 	// Use this for initialization
 	void Start () {
@@ -21,5 +22,10 @@ public class meleeDropDown : MonoBehaviour {
 		} else if (meleeDrop.value == 1) {
 			roomba.MeleePrefab = prefOne;
 		}
+
+        else if (meleeDrop.value == 2)
+        {
+            roomba.MeleePrefab = prefTwo;
+        }
 	}
 }

@@ -977,6 +977,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Lightsaber
       m_Image: {fileID: 0}
+    - m_Text: FlameThrower
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1027,9 +1029,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeDrop: {fileID: 623243501}
-  roomba: {fileID: 11431570, guid: 45c0967b555699e41916edb70d6ba9b8, type: 2}
+  roomba: {fileID: 11463840, guid: 45c0967b555699e41916edb70d6ba9b8, type: 2}
   prefZero: {fileID: 176392, guid: 0e1cbc6b7ade40848849ec04c1e5e64c, type: 2}
-  prefOne: {fileID: 119238, guid: eb462b386a92285459ad8c15608813ab, type: 2}
+  prefOne: {fileID: 130162, guid: eb462b386a92285459ad8c15608813ab, type: 2}
+  prefTwo: {fileID: 194396, guid: 6c58c456acf414d4dbfdad4d75be181f, type: 2}
 --- !u!1 &648747174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,7 +1809,7 @@ Prefab:
     - target: {fileID: 11446654, guid: 370a3129bdd5dfa4fb79bb0294725c23, type: 2}
       propertyPath: roomba
       value: 
-      objectReference: {fileID: 11431570, guid: 45c0967b555699e41916edb70d6ba9b8,
+      objectReference: {fileID: 11463840, guid: 45c0967b555699e41916edb70d6ba9b8,
         type: 2}
     - target: {fileID: 11446654, guid: 370a3129bdd5dfa4fb79bb0294725c23, type: 2}
       propertyPath: prefZero
@@ -2158,7 +2161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeDrop: {fileID: 1051328929}
-  roomba: {fileID: 11431570, guid: 45c0967b555699e41916edb70d6ba9b8, type: 2}
+  roomba: {fileID: 11463840, guid: 45c0967b555699e41916edb70d6ba9b8, type: 2}
   prefZero: {fileID: 118326, guid: 9f7942ba4b361274fabb1ab147033497, type: 2}
   prefOne: {fileID: 110550, guid: 59581ab45ea25a349ac810022ac86612, type: 2}
 --- !u!114 &1051328929
@@ -2693,7 +2696,8 @@ MonoBehaviour:
   meleeDrop: {fileID: 1147915356}
   roomba: {fileID: 11451162, guid: 2a8cde7b1b02e834888e7a8d96e4da42, type: 2}
   prefZero: {fileID: 176392, guid: 0e1cbc6b7ade40848849ec04c1e5e64c, type: 2}
-  prefOne: {fileID: 119238, guid: eb462b386a92285459ad8c15608813ab, type: 2}
+  prefOne: {fileID: 130162, guid: eb462b386a92285459ad8c15608813ab, type: 2}
+  prefTwo: {fileID: 194396, guid: 6c58c456acf414d4dbfdad4d75be181f, type: 2}
 --- !u!114 &1147915356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2741,6 +2745,8 @@ MonoBehaviour:
     - m_Text: Buzzsaw
       m_Image: {fileID: 0}
     - m_Text: Lightsaber
+      m_Image: {fileID: 0}
+    - m_Text: FlameThrower
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

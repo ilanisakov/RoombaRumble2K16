@@ -40,7 +40,7 @@ public class WeaponCollision : MonoBehaviour
             Vector2 collVec = -collision.contacts[0].normal;
             if (n.Contains("Player"))
             {
-                collision.gameObject.GetComponent<Roomba>().Health--;
+                collision.gameObject.GetComponent<Roomba>().Health -= 15;
                 //collision.gameObject.GetComponent<RoombaController>().KnockBack(collVec);
             }
         }
@@ -48,7 +48,7 @@ public class WeaponCollision : MonoBehaviour
         {//rocket
             if (n.Contains("Player"))
             {
-                collision.gameObject.GetComponent<Roomba>().Health -= 5;
+                collision.gameObject.GetComponent<Roomba>().Health -= 20;
             }
             Debug.Log(n);
             Destroy(this.gameObject);
@@ -57,15 +57,15 @@ public class WeaponCollision : MonoBehaviour
         {//mines
             if (n.Contains("Player"))
             {
-                collision.gameObject.GetComponent<Roomba>().Health -= 10;
+                collision.gameObject.GetComponent<Roomba>().Health -= 100;
             }
             Destroy(this.gameObject);
         }
         if (weaponID == 4)
-        {
+        {//Poop
             if (n.Contains("Player"))
             {
-                collision.gameObject.GetComponent<Roomba>().Health -= 1;
+                collision.gameObject.GetComponent<Roomba>().Health -= 10;
                 collision.gameObject.GetComponent<Roomba>().Slow();
             }
             Destroy(this.gameObject);
@@ -83,9 +83,20 @@ public class WeaponCollision : MonoBehaviour
         effectsHelper.Instance.Explosion(transform.position, Quaternion.identity);
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {//LightSaber
+        string n = collision.gameObject.name;
+        if (weaponID == 5)
+        {
+            if (n.Contains("Player"))
+            {
+                collision.gameObject.GetComponent<Roomba>().Health -= 15;
+            }
+        }
+    }
+
     void OnTriggerStay2D(Collider2D collision)
-    {
-        Debug.Log("o shit");
+    {//Flamethrower
         string n = collision.gameObject.name;
         if (weaponID == 6)
         {
