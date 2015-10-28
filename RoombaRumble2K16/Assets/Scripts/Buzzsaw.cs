@@ -22,5 +22,8 @@ public class Buzzsaw : Weapon {
         buzzsaw2.transform.Rotate(Vector3.forward * -720 * Time.deltaTime);
     }
 
+    public override void StopFire()
+    {
 
+    }
 }

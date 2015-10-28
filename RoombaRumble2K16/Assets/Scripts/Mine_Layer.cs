@@ -44,4 +44,8 @@ public class Mine_Layer : Weapon {
 			timer = 0;
 		}
     }
+
+    public override void StopFire()
+    {
+    }
 }

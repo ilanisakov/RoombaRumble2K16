@@ -79,6 +79,11 @@ public class Drop_the_Bass : Weapon {
 		}
     }
 
+    public override void StopFire()
+    {
+
+    }
+
     private void Hide()
     {
         theBass.GetComponent<SpriteRenderer>().enabled = false;

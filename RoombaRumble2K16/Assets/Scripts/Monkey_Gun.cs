@@ -22,6 +22,11 @@ public class Monkey_Gun : Weapon {
             StartCoroutine(Launch());
         }
     }
+
+    public override void StopFire()
+    {
+
+    }
     // method to fire poop
     IEnumerator Launch()
     {

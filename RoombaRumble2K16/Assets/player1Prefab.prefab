@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2856db553b3304744b1cd36851bc320e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleePrefab: {fileID: 176392, guid: 0e1cbc6b7ade40848849ec04c1e5e64c, type: 2}
+  meleePrefab: {fileID: 194396, guid: 6c58c456acf414d4dbfdad4d75be181f, type: 2}
   rangedPrefab: {fileID: 104838, guid: a63b9118988eda24cb2f1ec03ebe52e8, type: 2}
   activePrefab: {fileID: 110550, guid: 59581ab45ea25a349ac810022ac86612, type: 2}
 --- !u!212 &21226516
@@ -178,7 +178,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: meleePrefab
       value: 
-      objectReference: {fileID: 176392, guid: 0e1cbc6b7ade40848849ec04c1e5e64c, type: 2}
+      objectReference: {fileID: 194396, guid: 6c58c456acf414d4dbfdad4d75be181f, type: 2}
     - target: {fileID: 0}
       propertyPath: activePrefab
       value: 

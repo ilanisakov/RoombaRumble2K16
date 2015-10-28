@@ -71,6 +71,14 @@ public class RoombaController : MonoBehaviour
         {
             meleeWeapon.GetComponent<Weapon>().Fire();
         }
+        if ((playerID == 1 && Input.GetKeyUp(KeyCode.B)) || (playerID == 2 && Input.GetKeyUp(KeyCode.Keypad1)))
+        {
+            Debug.Log(meleeWeapon.GetComponent<Weapon>().name);
+            if(meleeWeapon.GetComponent<Weapon>().name.Contains("Flamethrower"))
+            {
+                meleeWeapon.GetComponent<Weapon>().StopFire();
+            }
+        }
         if ((playerID == 1 && Input.GetKey(KeyCode.M)) || (playerID == 2 && Input.GetKey(KeyCode.Keypad3)))
         {
 			activeItem.GetComponent<Weapon>().Fire(this.gameObject);

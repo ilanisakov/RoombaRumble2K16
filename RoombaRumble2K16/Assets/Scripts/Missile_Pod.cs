@@ -30,7 +30,10 @@ public class Missile_Pod : Weapon {
             StartCoroutine(Launch());
         }
     }
+    public override void StopFire()
+    {
 
+    }
     // method to fire rockets
     IEnumerator Launch()
     {
