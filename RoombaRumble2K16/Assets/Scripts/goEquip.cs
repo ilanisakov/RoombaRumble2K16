@@ -6,7 +6,8 @@ public class goEquip : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-		
+
+
 	}
 	
 	public void begin()
